@@ -7,8 +7,7 @@ var products = [
   {name: "Storm Trooper Figurine", price: "23", image: "https://s3.amazonaws.com/mernbook/marketplace/stormtrooper-1995015_960_720.jpg"}
 ];
 var cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')):{
-  items: [],
-  total: 0
+  items: []
 };
 
 localStorage.setItem('cart',JSON.stringify(cart));
@@ -33,8 +32,7 @@ $(document).ready(function(){
       
       var produtPrice = $('<p>').addClass('card-text').text("$" + product.price);
       cardBody.append(produtPrice);
-      // var cardTitle = $('<h5>').addClass('card-title');
-      // var cardText = $('<p>').addClass('card-text');
+
       var addtoCartbtn = $('<button>').addClass('btn btn-primary').text('Add to Cart').attr('id', index);
       cardBody.append(addtoCartbtn);
       
@@ -50,17 +48,6 @@ $(document).ready(function(){
       colDiv.append(cardDiv);
       $('#prod-row').append(colDiv);
       
-      
-      // ...............................................................................................
-      // <div class="col-md-4">
-      //   <div class="card">
-      //     <img class="card-img-top" src="https://s3.amazonaws.com/mernbook/marketplace/tardis.png" alt="Card image cap">
-      //     <div class="card-body">
-      //       <h5 class="card-title">Tardis Figurine</h5>
-      //       <p class="card-text">$ 14 x <input type="number" min="0"></p>
-      //     </div>
-      //   </div>
-      // </div>
     });
 
   $("#showCartBtn").click(function(){
@@ -75,7 +62,6 @@ $(document).ready(function(){
     $("#showCartBtn").show();
   });
   
-  console.log("Start here");
   // Basic tasks
   // 1. Show / hide cart section on button click (Cart button / close cutton)
   // 2. Dynamically load products to view
